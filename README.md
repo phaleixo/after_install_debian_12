@@ -2,6 +2,12 @@ Post installation script developed for Debian 12 live Gnome base, based on my us
 Link to download the ISO:
 https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-12.4.0-amd64-gnome.iso
 
+Make all changes (recommend)
+
+```
+curl -o pos_install_complete.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/pos_install_complete.sh && chmod +x pos_install_complete.sh && ./pos_install_complete.sh && rm pos_install_complete.sh
+```
+
 Activating the contrib and non-free repository and install flatpak support and flathub repository:
 ```
 curl -o activating_repo_apps.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/activating_repo_apps.sh && chmod +x activating_repo_apps.sh && ./activating_repo_apps.sh && rm activating_repo_apps.sh
