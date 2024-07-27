@@ -59,6 +59,19 @@ Font corrections:
 ```
 curl -o font_corrections.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/font_corrections.sh && chmod +x font_corrections.sh && ./font_corrections.sh && rm font_corrections.sh
 ```
+
+Install Gnome-extensions:''places-status-indicator
+appindicator-support
+auto-activities
+quick-settings-tweaker
+dash-to-dock
+tophat
+tiling-assistant
+''
+```
+curl -o install_extensions.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/install_extensions.sh && chmod +x install_extensions.sh && ./install_extensions.sh && rm install_extensions.sh
+```
+
 Unnecessary Apps Remover:
 `
     fcitx*
