@@ -1,6 +1,6 @@
 Post installation script developed for Debian 12 live Gnome base, based on my use of programs, configurations and customizations.
 Link to download the ISO:
-https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-12.4.0-amd64-gnome.iso
+https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-12.6.0-amd64-gnome.iso
 
 Make all changes (recommend)
 
