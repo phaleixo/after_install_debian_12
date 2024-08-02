@@ -2,7 +2,7 @@
 
 ### Initial message
 echo -e "\n       ############################################################"
-echo -e "       #              Install and configure Fonts            #"
+echo -e "       #          Install and configure Wallpapers            #"
 echo -e "       ############################################################ \n"
 echo "For more information, visit the project link:"
 echo "https://github.com/phaleixo/after_install_debian_12"
@@ -38,7 +38,7 @@ else
 fi
 
 clear
-mkdir -p ~/.fonts
+
 
 wget --version > /dev/null
 
@@ -55,9 +55,9 @@ if [[ $? -ne 0 ]]; then
 fi
 
 
-wget -O wallpapers.xml "https://github.com/phaleixo/after_install_debian_12/blob/main/Fonts%20for%20design.zip"
+wget -O my_wallpapers.xml "https://github.com/phaleixo/after_install_debian_12/blob/main/my_wallpapers.xml"
 
-wget -O FontsForDesign.zip "https://github.com/phaleixo/after_install_debian_12/blob/main/Fonts%20for%20design.zip"
+wget -O wallpapers.zip "https://github.com/phaleixo/after_install_debian_12/blob/main/wallpapers.zip"
 
 
 if [[ $? -ne 0 ]]; then
@@ -66,8 +66,8 @@ if [[ $? -ne 0 ]]; then
 fi
 
 unzip wallpapers.zip -d ~/
-sudo mv /wallpapers /usr/share/backgrounds/
-sudo mv /wallpapers.xml /usr/share/gnome-background-properties/
+sudo mv wallpapers /usr/share/backgrounds/
+sudo mv my_wallpapers.xml /usr/share/gnome-background-properties/
 
 
 clear
@@ -77,7 +77,9 @@ sleep 2
 clear
 echo "Set Wallpaper "
 
-gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/wallpapers/10.jpg'
+gsettings set org.gnome.desktop.background picture-uri-dark 'file:///usr/share/backgrounds/wallpapers/21.jpg'
+
+gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/wallpapers/21.jpg'
 
 clear
 
