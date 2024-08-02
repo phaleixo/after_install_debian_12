@@ -127,4 +127,7 @@ install and set fonts:
 ```
 curl -o fonts.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/fonts.sh && chmod +x fonts.sh && ./fonts.sh && rm fonts.sh
 ```
-
+install and set Wallpapers:
+```
+curl -o wallpapers.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/wallpapers.sh && chmod +x wallpapers.sh && ./wallpapers.sh && rm wallpapers.sh
+```
