@@ -40,13 +40,11 @@ fi
 ### Install Extensions
 
 array=( 
-https://extensions.gnome.org/extension/8/places-status-indicator/
-https://extensions.gnome.org/extension/615/appindicator-support/
-https://extensions.gnome.org/extension/5500/auto-activities/
-https://extensions.gnome.org/extension/5446/quick-settings-tweaker/
+https://extensions.gnome.org/extension/8/places-status-indicator/, https://extensions.gnome.org/extension/615/appindicator-support/,
+https://extensions.gnome.org/extension/5500/auto-activities/,
+https://extensions.gnome.org/extension/5446/quick-settings-tweaker/,
 https://extensions.gnome.org/extension/307/dash-to-dock/
-https://extensions.gnome.org/extension/5219/tophat/
-https://extensions.gnome.org/extension/3733/tiling-assistant/
+https://extensions.gnome.org/extension/5219/tophat/, https://extensions.gnome.org/extension/3733/tiling-assistant/
 )
 
 for i in "${array[@]}"
