@@ -55,10 +55,7 @@ Codecs and tweaks installer:
 ```
 curl -o codecs_and_tweaks_installer.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/codecs_and_tweaks_installer.sh && chmod +x codecs_and_tweaks_installer.sh && ./codecs_and_tweaks_installer.sh && rm codecs_and_tweaks_installer.sh
 ```
-Font corrections:
-```
-curl -o font_corrections.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/font_corrections.sh && chmod +x font_corrections.sh && ./font_corrections.sh && rm font_corrections.sh
-```
+
 
 Install Gnome-extensions:''places-status-indicator
 appindicator-support
