@@ -84,7 +84,9 @@ for app_name in "${apps[@]}"; do
   fi
 done
 ### Adding/Confirming 32-bit architecture
+
 sudo dpkg --add-architecture i386
+
 echo -e "Installed tweaks and codecs"
 
 exit 0
