@@ -1,7 +1,7 @@
 // Language translations
 const translations = {
     pt: {
-        "title": "Scripts de Pós-Instalação do Debian 12",
+        "title": "Pós-Instalação do Debian 12",
         "hero.title": "Otimize Sua Experiência com o Debian 12 GNOME",
         "hero.subtitle": "Uma coleção de scripts para personalizar e melhorar sua instalação do Debian 12 com aplicativos essenciais, codecs, ajustes e muito mais.",
         "hero.download": "Baixar Debian 12",
@@ -39,11 +39,12 @@ const translations = {
         "features.performance.title": "Desempenho",
         "features.performance.description": "Otimizações de drivers e remoção de bloat para um sistema mais rápido.",
         "footer.text": "Scripts de Pós-Instalação do Debian 12",
+        "footer.text2": "Desenvolvido por",
         "footer.disclaimer": "Não afiliado ao Projeto Debian. Use por sua conta e risco.",
         "notification.copied": "Copiado para a área de transferência!"
     },
     es: {
-        "title": "Scripts de Post-Instalación para Debian 12",
+        "title": "Post-Instalación para Debian 12",
         "hero.title": "Optimiza tu Experiencia con Debian 12 GNOME",
         "hero.subtitle": "Una colección de scripts para personalizar y mejorar tu instalación de Debian 12 con aplicaciones esenciales, códecs, ajustes y más.",
         "hero.download": "Descargar Debian 12",
@@ -81,11 +82,12 @@ const translations = {
         "features.performance.title": "Rendimiento",
         "features.performance.description": "Optimizaciones de controladores y eliminación de bloat para un sistema más rápido.",
         "footer.text": "Scripts de Post-Instalación para Debian 12",
+        "footer.text2": "Desarrollado por",
         "footer.disclaimer": "No afiliado al Proyecto Debian. Úsalo bajo tu propio riesgo.",
         "notification.copied": "¡Copiado al portapapeles!"
     },
     en: {
-        "title": "Debian 12 Post-Installation Scripts",
+        "title": "Debian 12 Post-Installation",
         "hero.title": "Optimize Your Debian 12 GNOME Experience",
         "hero.subtitle": "A collection of scripts to customize and enhance your Debian 12 installation with essential apps, codecs, tweaks, and more.",
         "hero.download": "Download Debian 12",
@@ -123,65 +125,168 @@ const translations = {
         "features.performance.title": "Performance",
         "features.performance.description": "Driver optimizations and bloat removal for a faster system.",
         "footer.text": "Debian 12 Post-Installation Scripts",
+        "footer.text2": "Developed by",
         "footer.disclaimer": "Not affiliated with the Debian Project. Use at your own risk.",
         "notification.copied": "Copied to clipboard!"
     }
 };
 
+let currentLang = 'pt'; // Define a linguagem padrão
+
+// Função para aplicar as traduções
+function applyTranslations(lang) {
+    console.log('Aplicando traduções para:', lang); // Debug
+
+    if (!translations[lang]) {
+        console.error('Idioma não encontrado:', lang);
+        return;
+    }
+
+    // Seleciona todos os elementos com data-i18n
+    const elements = document.querySelectorAll('[data-i18n]');
+    console.log('Elementos encontrados:', elements.length); // Debug
+
+    elements.forEach(element => {
+        const key = element.getAttribute('data-i18n');
+
+        if (translations[lang][key]) {
+            // Trata diferentes tipos de elementos
+            if (element.tagName === 'INPUT' && element.type === 'submit') {
+                element.value = translations[lang][key];
+            } else if (element.tagName === 'INPUT' && element.hasAttribute('placeholder')) {
+                element.placeholder = translations[lang][key];
+            } else {
+                // Para elementos regulares, preserva HTML interno se necessário
+                if (element.innerHTML.includes('<')) {
+                    // Se tem HTML interno, substitui apenas o texto
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = element.innerHTML;
+
+                    // Encontra o nó de texto principal
+                    const textNode = tempDiv.firstChild;
+                    if (textNode && textNode.nodeType === Node.TEXT_NODE) {
+                        textNode.textContent = translations[lang][key];
+                        element.innerHTML = tempDiv.innerHTML;
+                    } else {
+                        // Se não encontrar nó de texto, substitui tudo
+                        element.textContent = translations[lang][key];
+                    }
+                } else {
+                    element.textContent = translations[lang][key];
+                }
+            }
+        } else {
+            console.warn('Chave de tradução não encontrada:', key, 'para idioma:', lang);
+        }
+    });
+
+    // Atualiza o atributo lang do HTML
+    document.documentElement.lang = lang;
+    currentLang = lang;
+
+    console.log('Traduções aplicadas com sucesso para:', lang); // Debug
+}
+
 // Language switcher functionality
 document.addEventListener('DOMContentLoaded', function () {
-    // Language dropdown toggle
+    console.log('DOM carregado, inicializando sistema de idiomas'); // Debug
+
+    // Aplica as traduções iniciais
+    applyTranslations(currentLang);
+
     const languageDropdownButton = document.getElementById('languageDropdownButton');
     const languageDropdown = document.getElementById('languageDropdown');
 
-    languageDropdownButton.addEventListener('click', function () {
+    if (!languageDropdownButton || !languageDropdown) {
+        console.error('Elementos do dropdown não encontrados');
+        return;
+    }
+
+    // Toggle dropdown
+    languageDropdownButton.addEventListener('click', function (e) {
+        e.preventDefault();
         languageDropdown.classList.toggle('hidden');
+        console.log('Dropdown toggled'); // Debug
     });
 
-    // Close dropdown when clicking outside
+    // Adiciona event listener para os links de idioma
+    const languageLinks = document.querySelectorAll('#languageDropdown a[data-lang]');
+    console.log('Links de idioma encontrados:', languageLinks.length); // Debug
+
+    languageLinks.forEach(link => {
+        link.addEventListener('click', function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            const selectedLang = this.getAttribute('data-lang');
+            console.log('Idioma selecionado:', selectedLang); // Debug
+
+            if (selectedLang && selectedLang !== currentLang) {
+                applyTranslations(selectedLang);
+
+                // Feedback visual opcional
+                this.style.backgroundColor = '#f3f4f6';
+                setTimeout(() => {
+                    this.style.backgroundColor = '';
+                }, 200);
+            }
+
+            languageDropdown.classList.add('hidden');
+        });
+    });
+
+    // Fecha dropdown ao clicar fora
     document.addEventListener('click', function (event) {
-        if (!languageDropdownButton.contains(event.target) && !languageDropdown.contains(event.target)) {
+        if (!languageDropdownButton.contains(event.target) &&
+            !languageDropdown.contains(event.target)) {
             languageDropdown.classList.add('hidden');
         }
     });
 
-    // Language selection
-    languageDropdown.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', function (event) {
-            event.preventDefault();
-            const selectedLang = this.dataset.lang;
-            setLanguage(selectedLang);
-            languageDropdown.classList.add('hidden');
-        });
-    });
-
-    // Set language
-    function setLanguage(lang) {
-        document.querySelectorAll('[data-i18n]').forEach(element => {
-            const key = element.dataset.i18n;
-            if (translations[lang] && translations[lang][key]) {
-                element.textContent = translations[lang][key];
-            }
-        });
-        // Como agora é apenas um ícone, não precisamos atualizar o texto do botão
-    }
-
-    // Set initial language (you might want to store this in localStorage)
-    setLanguage('pt');
+    console.log('Sistema de idiomas inicializado com sucesso');
 });
 
-// Copy to clipboard functionality
+// Copy to clipboard function (mantida como estava)
 function copyToClipboard(id) {
-    const codeElement = document.getElementById(id);
-    const textToCopy = codeElement.textContent || codeElement.innerText;
+    const preElement = document.getElementById(id);
+    if (!preElement) {
+        console.error('Elemento não encontrado:', id);
+        return;
+    }
+
+    const textToCopy = preElement.textContent || preElement.innerText;
 
     navigator.clipboard.writeText(textToCopy).then(() => {
         const notification = document.getElementById('copyNotification');
-        notification.classList.remove('hidden');
-        setTimeout(() => {
-            notification.classList.add('hidden');
-        }, 2000);
+        if (notification) {
+            notification.classList.remove('hidden');
+            setTimeout(() => {
+                notification.classList.add('hidden');
+            }, 2000);
+        }
     }).catch(err => {
-        console.error('Erro ao copiar: ', err);
+        console.error('Falha ao copiar texto:', err);
+
+        // Fallback para navegadores mais antigos
+        const textArea = document.createElement('textarea');
+        textArea.value = textToCopy;
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+
+        try {
+            document.execCommand('copy');
+            const notification = document.getElementById('copyNotification');
+            if (notification) {
+                notification.classList.remove('hidden');
+                setTimeout(() => {
+                    notification.classList.add('hidden');
+                }, 2000);
+            }
+        } catch (err) {
+            console.error('Fallback de cópia também falhou:', err);
+        }
+
+        document.body.removeChild(textArea);
     });
 }
