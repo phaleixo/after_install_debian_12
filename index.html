@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pós-Instalação do Debian 12</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        debian: '#A80030',
+                        debianEmerald: '#05475c',
+                        debianLight: '#d63368',
+                        debianDark: '#7a0022',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-stone-200 font-sans antialiased">
+    <header class="bg-debianEmerald text-white shadow-lg">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <i class="fab fa-linux text-3xl mr-3"></i>
+                    <h1 class="text-2xl md:text-3xl font-bold" data-i18n="title">Pós-Instalação do Debian 12</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="https://github.com/phaleixo/after_install_debian_12" target="_blank" class="bg-transparent border-2 border-white text-white px-4 py-2 rounded-lg font-semibold hover:bg-white hover:text-debianEmerald transition">
+                        <i class="fab fa-github mr-2"></i> GitHub
+                    </a>
+                    <div class="relative text-white">
+                        <button id="languageDropdownButton" class="flex items-center space-x-2 focus:outline-none bg-transparent border-2 border-white text-white px-4 py-2 rounded-lg font-semibold hover:bg-white hover:text-debianEmerald transition">
+                            <i class="fas fa-globe text-lg"></i>
+                        </button>
+                        <div id="languageDropdown" class="hidden absolute right-0 mt-2 w-40 bg-white rounded-md shadow-lg z-10">
+                            <a href="#" data-lang="pt" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">🇧🇷 Português</a>
+                            <a href="#" data-lang="es" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">🇪🇸 Español</a>
+                            <a href="#" data-lang="en" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">🇺🇸 English</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-debianEmerald text-white py-12 relative overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center opacity-100" style="background-image: url('image/banner/banner_debian12_emerald.png');"></div>
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="hero.title">Otimize Sua Experiência com o Debian 12 GNOME</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto" data-i18n="hero.subtitle">Uma coleção de scripts para personalizar e melhorar sua instalação do Debian 12 com aplicativos essenciais, codecs, ajustes e muito mais.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#download" class="bg-white text-debian px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition">
+                    <i class="fas fa-download mr-2"></i> <span data-i18n="hero.download">Baixar Debian 12</span>
+                </a>
+                <a href="#scripts" class="bg-transparent border-2 border-white px-6 py-3 rounded-lg font-bold hover:bg-white hover:text-debian transition">
+                    <i class="fas fa-code mr-2"></i> <span data-i18n="hero.viewScripts">Ver Scripts</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <main class="container mx-auto px-4 py-12">
+        <section id="download" class="mb-16 bg-white rounded-xl shadow-md p-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-6 md:mb-0 md:pr-8">
+                    <h2 class="text-2xl font-bold text-debian mb-4" data-i18n="download.title">Baixar Debian 12 GNOME</h2>
+                    <p class="text-gray-700 mb-4" data-i18n="download.description">Comece com a ISO live oficial do Debian 12 GNOME para usar esses scripts de pós-instalação.</p>
+                    <a href="https://www.debian.org/download.pt.html" class="inline-block bg-debian text-white px-6 py-3 rounded-lg font-semibold hover:bg-debianDark transition">
+                        <i class="fas fa-download mr-2"></i> <span data-i18n="download.button">Baixar ISO</span>
+                    </a>
+                </div>
+                <div class="md:w-1/2 bg-gray-100 rounded-lg p-4">
+                    <pre class="bg-gray-800 text-gray-100 p-4 rounded-lg overflow-x-auto"><code># Debian 12 GNOME ISO Oficial
+https://www.debian.org/download.pt.html</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-debian mb-8 text-center" data-i18n="features.title">O Que Está Incluído</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <div class="text-debian text-4xl mb-4">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2" data-i18n="features.packages.title">Pacotes Essenciais</h3>
+                    <p class="text-gray-700" data-i18n="features.packages.description">Codecs, firmware, fontes e utilitários para tornar seu sistema totalmente funcional.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <div class="text-debian text-4xl mb-4">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2" data-i18n="features.customization.title">Personalização GNOME</h3>
+                    <p class="text-gray-700" data-i18n="features.customization.description">Extensões e ajustes para melhorar sua experiência com o desktop GNOME.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <div class="text-debian text-4xl mb-4">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2" data-i18n="features.performance.title">Desempenho</h3>
+                    <p class="text-gray-700" data-i18n="features.performance.description">Otimizações de drivers e remoção de bloat para um sistema mais rápido.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="scripts" class="mb-16">
+            <h2 class="text-3xl font-bold text-debian mb-8 text-center" data-i18n="scripts.title">Scripts de Pós-Instalação</h2>
+
+            <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.complete.title">Pós-Instalação Completa</h3>
+                    <p class="text-gray-700 mb-4" data-i18n="scripts.complete.description">Execute todas as alterações recomendadas incluindo ativação de repositórios, instalação de codecs, extensões GNOME e instalação de aplicativos.</p>
+
+                    <button onclick="copyToClipboard('complete')" class="bg-gray-200 text-gray-800 px-4 py-2 rounded mr-2 hover:bg-gray-300 transition mb-4">
+                        <i class="fas fa-copy mr-2"></i> <span data-i18n="scripts.copy">Copiar</span>
+                    </button>
+
+                    <div class="bg-gray-800 text-gray-100 p-4 rounded-lg overflow-x-auto">
+                        <pre id="complete" class="text-sm"><code>curl -o pos_install_complete.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/pos_install_complete.sh && chmod +x pos_install_complete.sh && ./pos_install_complete.sh && rm pos_install_complete.sh</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.repos.title">Ativar Repositórios</h3>
+                        <p class="text-gray-700 mb-4" data-i18n="scripts.repos.description">Ative os repositórios contrib e non-free e instale suporte ao Flatpak com o repositório Flathub.</p>
+                        <button onclick="copyToClipboard('repos')" class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition">
+                            <i class="fas fa-copy mr-2"></i> <span data-i18n="scripts.copy">Copiar</span>
+                        </button>
+                    </div>
+                    <div class="bg-gray-800 text-gray-100 p-4 m-4 rounded-lg overflow-x-auto">
+                        <pre id="repos" class="text-sm"><code>curl -o activating_repo_apps.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/activating_repo_apps.sh && chmod +x activating_repo_apps.sh && ./activating_repo_apps.sh && rm activating_repo_apps.sh</code></pre>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.firefox.title">Firefox Atual</h3>
+                        <p class="text-gray-700 mb-4" data-i18n="scripts.firefox.description">Mude do Firefox ESR para a versão de lançamento atual.</p>
+                        <button onclick="copyToClipboard('firefox')" class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition">
+                            <i class="fas fa-copy mr-2"></i> <span data-i18n="scripts.copy">Copiar</span>
+                        </button>
+                    </div>
+                    <div class="bg-gray-800 text-gray-100 p-4 m-4 rounded-lg overflow-x-auto">
+                        <pre id="firefox" class="text-sm"><code>curl -o change_firefox_esr_to_firefox.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/change_firefox_esr_to_firefox.sh && chmod +x change_firefox_esr_to_firefox.sh && ./change_firefox_esr_to_firefox.sh && rm change_firefox_esr_to_firefox.sh</code></pre>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.codecs.title">Codecs & Ajustes</h3>
+                        <p class="text-gray-700 mb-4" data-i18n="scripts.codecs.description">Instale codecs multimídia, firmware, fontes e utilitários úteis.</p>
+                        <button onclick="copyToClipboard('codecs')" class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition">
+                            <i class="fas fa-copy mr-2"></i> <span data-i18n="scripts.copy">Copiar</span>
+                        </button>
+                    </div>
+                    <div class="bg-gray-800 text-gray-100 p-4 m-4 rounded-lg overflow-x-auto">
+                        <pre id="codecs" class="text-sm"><code>curl -o codecs_and_tweaks_installer.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/codecs_and_tweaks_installer.sh && chmod +x codecs_and_tweaks_installer.sh && ./codecs_and_tweaks_installer.sh && rm codecs_and_tweaks_installer.sh</code></pre>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.extensions.title">Extensões GNOME</h3>
+                        <p class="text-gray-700 mb-4" data-i18n="scripts.extensions.description">Instale extensões úteis do GNOME como Dash-to-Dock, Tiling Assistant e mais.</p>
+                        <button onclick="copyToClipboard('extensions')" class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition">
+                            <i class="fas fa-copy mr-2"></i> <span data-i18n="scripts.copy">Copiar</span>
+                        </button>
+                    </div>
+                    <div class="bg-gray-800 text-gray-100 p-4 m-4 rounded-lg overflow-x-auto">
+                        <pre id="extensions" class="text-sm"><code>curl -o install_extensions.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/install_extensions.sh && chmod +x install_extensions.sh && ./install_extensions.sh && rm install_extensions.sh</code></pre>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.remove.title">Remover Apps Desnecessários</h3>
+                        <p class="text-gray-700 mb-4" data-i18n="scripts.remove.description">Remova aplicativos pré-instalados desnecessários para limpar seu sistema.</p>
+                        <button onclick="copyToClipboard('remove')" class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition">
+                            <i class="fas fa-copy mr-2"></i> <span data-i18n="scripts.copy">Copiar</span>
+                        </button>
+                    </div>
+                    <div class="bg-gray-800 text-gray-100 p-4 m-4 rounded-lg overflow-x-auto">
+                        <pre id="remove" class="text-sm"><code>curl -o unnecessary_apps_remover.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/unnecessary_apps_remover.sh && chmod +x unnecessary_apps_remover.sh && ./unnecessary_apps_remover.sh && rm unnecessary_apps_remover.sh</code></pre>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.apps.title">Instalar Aplicativos</h3>
+                        <p class="text-gray-700 mb-4" data-i18n="scripts.apps.description">Instale aplicativos úteis via Flatpak incluindo GIMP, Inkscape e mais.</p>
+                        <button onclick="copyToClipboard('apps')" class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition">
+                            <i class="fas fa-copy mr-2"></i> <span data-i18n="scripts.copy">Copiar</span>
+                        </button>
+                    </div>
+                    <div class="bg-gray-800 text-gray-100 p-4 m-4 rounded-lg overflow-x-auto">
+                        <pre id="apps" class="text-sm"><code>curl -o install_apps.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/install_apps.sh && chmod +x install_apps.sh && ./install_apps.sh && rm install_apps.sh</code></pre>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.radeon.title">Radeon para AMDGPU</h3>
+                        <p class="text-gray-700 mb-4" data-i18n="scripts.radeon.description">Mude do driver Radeon para AMDGPU para melhor desempenho com certas GPUs AMD.</p>
+                        <button onclick="copyToClipboard('radeon')" class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition">
+                            <i class="fas fa-copy mr-2"></i> <span data-i18n="scripts.copy">Copiar</span>
+                        </button>
+                    </div>
+                    <div class="bg-gray-800 text-gray-100 p-4 m-4 rounded-lg overflow-x-auto">
+                        <pre id="radeon" class="text-sm"><code>curl -o radeon_to_amdgpu.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/radeon_to_amdgpu.sh && chmod +x radeon_to_amdgpu.sh && ./radeon_to_amdgpu.sh && rm radeon_to_amdgpu.sh</code></pre>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.fonts.title">Instalar Fontes</h3>
+                        <p class="text-gray-700 mb-4" data-i18n="scripts.fonts.description">Instale e configure fontes adicionais para melhor tipografia.</p>
+                        <button onclick="copyToClipboard('fonts')" class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition">
+                            <i class="fas fa-copy mr-2"></i> <span data-i18n="scripts.copy">Copiar</span>
+                        </button>
+                    </div>
+                    <div class="bg-gray-800 text-gray-100 p-4 m-4 rounded-lg overflow-x-auto">
+                        <pre id="fonts" class="text-sm"><code>curl -o fonts.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/fonts.sh && chmod +x fonts.sh && ./fonts.sh && rm fonts.sh</code></pre>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.wallpapers.title">Instalar Papéis de Parede</h3>
+                        <p class="text-gray-700 mb-4" data-i18n="scripts.wallpapers.description">Baixe e configure papéis de parede adicionais para sua área de trabalho.</p>
+                        <button onclick="copyToClipboard('wallpapers')" class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition">
+                            <i class="fas fa-copy mr-2"></i> <span data-i18n="scripts.copy">Copiar</span>
+                        </button>
+                    </div>
+                    <div class="bg-gray-800 text-gray-100 p-4 m-4 rounded-lg overflow-x-auto">
+                        <pre id="wallpapers" class="text-sm"><code>curl -o wallpapers.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/wallpapers.sh && chmod +x wallpapers.sh && ./wallpapers.sh && rm wallpapers.sh</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-debianEmerald text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://github.com/phaleixo/after_install_debian_12" target="_blank" class="text-2xl hover:text-gray-300 transition">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <p class="mb-2" data-i18n="footer.text">Pós-Instalação do Debian 12</p>
+            <p class="text-sm text-gray-300 mb-2 flex items-center justify-center space-x-1" data-i18n="footer.text2">
+                Developed by
+                <a href="https://github.com/phaleixo" target="_blank" class="text-white hover:text-gray-300 transition-colors">
+                    <i class="fab fa-github text-base mr-1"></i> phaleixo
+                </a>
+            </p>
+            <p class="text-sm text-gray-300" data-i18n="footer.disclaimer">Não afiliado ao Projeto Debian. Use por sua conta e risco.</p>
+        </div>
+    </footer>
+
+    <div id="copyNotification" class="fixed bottom-4 right-4 bg-debian text-white px-4 py-2 rounded-lg shadow-lg hidden">
+        <i class="fas fa-check mr-2"></i> <span data-i18n="notification.copied">Copiado para a área de transferência!</span>
+    </div>
+
+    <script>
+        // Language translations
+        const translations = {
+            pt: {
+                "title": "Scripts de Pós-Instalação do Debian 12",
+                "hero.title": "Otimize Sua Experiência com o Debian 12 GNOME",
+                "hero.subtitle": "Uma coleção de scripts para personalizar e melhorar sua instalação do Debian 12 com aplicativos essenciais, codecs, ajustes e muito mais.",
+                "hero.download": "Baixar Debian 12",
+                "hero.viewScripts": "Ver Scripts",
+                "download.title": "Baixar Debian 12 GNOME",
+                "download.description": "Comece com a ISO live oficial do Debian 12 GNOME para usar esses scripts de pós-instalação.",
+                "download.button": "Baixar ISO",
+                "scripts.title": "Scripts de Pós-Instalação",
+                "scripts.complete.title": "Pós-Instalação Completa",
+                "scripts.complete.description": "Execute todas as alterações recomendadas incluindo ativação de repositórios, instalação de codecs, extensões GNOME e instalação de aplicativos.",
+                "scripts.repos.title": "Ativar Repositórios",
+                "scripts.repos.description": "Ative os repositórios contrib e non-free e instale suporte ao Flatpak com o repositório Flathub.",
+                "scripts.firefox.title": "Firefox Atual",
+                "scripts.firefox.description": "Mude do Firefox ESR para a versão de lançamento atual.",
+                "scripts.codecs.title": "Codecs & Ajustes",
+                "scripts.codecs.description": "Instale codecs multimídia, firmware, fontes e utilitários úteis.",
+                "scripts.extensions.title": "Extensões GNOME",
+                "scripts.extensions.description": "Instale extensões úteis do GNOME como Dash-to-Dock, Tiling Assistant e mais.",
+                "scripts.remove.title": "Remover Apps Desnecessários",
+                "scripts.remove.description": "Remova aplicativos pré-instalados desnecessários para limpar seu sistema.",
+                "scripts.apps.title": "Instalar Aplicativos",
+                "scripts.apps.description": "Instale aplicativos úteis via Flatpak incluindo GIMP, Inkscape e mais.",
+                "scripts.radeon.title": "Radeon para AMDGPU",
+                "scripts.radeon.description": "Mude do driver Radeon para AMDGPU para melhor desempenho com certas GPUs AMD.",
+                "scripts.fonts.title": "Instalar Fontes",
+                "scripts.fonts.description": "Instale e configure fontes adicionais para melhor tipografia.",
+                "scripts.wallpapers.title": "Instalar Papéis de Parede",
+                "scripts.wallpapers.description": "Baixe e configure papéis de parede adicionais para sua área de trabalho.",
+                "scripts.copy": "Copiar",
+                "features.title": "O Que Está Incluído",
+                "features.packages.title": "Pacotes Essenciais",
+                "features.packages.description": "Codecs, firmware, fontes e utilitários para tornar seu sistema totalmente funcional.",
+                "features.customization.title": "Personalização GNOME",
+                "features.customization.description": "Extensões e ajustes para melhorar sua experiência com o desktop GNOME.",
+                "features.performance.title": "Desempenho",
+                "features.performance.description": "Otimizações de drivers e remoção de bloat para um sistema mais rápido.",
+                "footer.text": "Scripts de Pós-Instalação do Debian 12",
+                "footer.disclaimer": "Não afiliado ao Projeto Debian. Use por sua conta e risco.",
+                "notification.copied": "Copiado para a área de transferência!"
+            },
+            es: {
+                "title": "Scripts de Post-Instalación para Debian 12",
+                "hero.title": "Optimiza tu Experiencia con Debian 12 GNOME",
+                "hero.subtitle": "Una colección de scripts para personalizar y mejorar tu instalación de Debian 12 con aplicaciones esenciales, códecs, ajustes y más.",
+                "hero.download": "Descargar Debian 12",
+                "hero.viewScripts": "Ver Scripts",
+                "download.title": "Descargar Debian 12 GNOME",
+                "download.description": "Comienza con la ISO live oficial de Debian 12 GNOME para usar estos scripts de post-instalación.",
+                "download.button": "Descargar ISO",
+                "scripts.title": "Scripts de Post-Instalación",
+                "scripts.complete.title": "Post-Instalación Completa",
+                "scripts.complete.description": "Ejecuta todos los cambios recomendados incluyendo activación de repositorios, instalación de códecs, extensiones GNOME e instalación de aplicaciones.",
+                "scripts.repos.title": "Activar Repositorios",
+                "scripts.repos.description": "Activa los repositorios contrib y non-free e instala soporte para Flatpak con el repositorio Flathub.",
+                "scripts.firefox.title": "Firefox Actual",
+                "scripts.firefox.description": "Cambia de Firefox ESR a la versión de lanzamiento actual.",
+                "scripts.codecs.title": "Códecs & Ajustes",
+                "scripts.codecs.description": "Instala códecs multimedia, firmware, fuentes y utilidades útiles.",
+                "scripts.extensions.title": "Extensiones GNOME",
+                "scripts.extensions.description": "Instala extensiones útiles de GNOME como Dash-to-Dock, Tiling Assistant y más.",
+                "scripts.remove.title": "Eliminar Apps Innecesarios",
+                "scripts.remove.description": "Elimina aplicaciones preinstaladas innecesarias para limpiar tu sistema.",
+                "scripts.apps.title": "Instalar Aplicaciones",
+                "scripts.apps.description": "Instala aplicaciones útiles via Flatpak incluyendo GIMP, Inkscape y más.",
+                "scripts.radeon.title": "Radeon a AMDGPU",
+                "scripts.radeon.description": "Cambia del controlador Radeon a AMDGPU para mejor rendimiento con ciertas GPUs AMD.",
+                "scripts.fonts.title": "Instalar Fuentes",
+                "scripts.fonts.description": "Instala y configura fuentes adicionales para mejor tipografía.",
+                "scripts.wallpapers.title": "Instalar Fondos de Pantalla",
+                "scripts.wallpapers.description": "Descarga y configura fondos de pantalla adicionales para tu escritorio.",
+                "scripts.copy": "Copiar",
+                "features.title": "Qué está Incluido",
+                "features.packages.title": "Paquetes Esenciales",
+                "features.packages.description": "Códecs, firmware, fuentes y utilidades para hacer tu sistema completamente funcional.",
+                "features.customization.title": "Personalización GNOME",
+                "features.customization.description": "Extensiones y ajustes para mejorar tu experiencia con el escritorio GNOME.",
+                "features.performance.title": "Rendimiento",
+                "features.performance.description": "Optimizaciones de controladores y eliminación de bloat para un sistema más rápido.",
+                "footer.text": "Scripts de Post-Instalación para Debian 12",
+                "footer.disclaimer": "No afiliado al Proyecto Debian. Úsalo bajo tu propio riesgo.",
+                "notification.copied": "¡Copiado al portapapeles!"
+            },
+            en: {
+                "title": "Debian 12 Post-Installation Scripts",
+                "hero.title": "Optimize Your Debian 12 GNOME Experience",
+                "hero.subtitle": "A collection of scripts to customize and enhance your Debian 12 installation with essential apps, codecs, tweaks, and more.",
+                "hero.download": "Download Debian 12",
+                "hero.viewScripts": "View Scripts",
+                "download.title": "Download Debian 12 GNOME",
+                "download.description": "Start with the official Debian 12 GNOME live ISO to use these post-installation scripts.",
+                "download.button": "Download ISO",
+                "scripts.title": "Post-Installation Scripts",
+                "scripts.complete.title": "Complete Post-Installation",
+                "scripts.complete.description": "Run all recommended changes including repository activation, codecs installation, GNOME extensions, and app installations.",
+                "scripts.repos.title": "Activate Repositories",
+                "scripts.repos.description": "Activate contrib and non-free repositories and install Flatpak support with Flathub.",
+                "scripts.firefox.title": "Firefox Current",
+                "scripts.firefox.description": "Change from Firefox ESR to the current release version.",
+                "scripts.codecs.title": "Codecs & Tweaks",
+                "scripts.codecs.description": "Install multimedia codecs, firmware, fonts, and useful utilities.",
+                "scripts.extensions.title": "GNOME Extensions",
+                "scripts.extensions.description": "Install useful GNOME extensions like Dash-to-Dock, Tiling Assistant, and more.",
+                "scripts.remove.title": "Remove Unneeded Apps",
+                "scripts.remove.description": "Remove unnecessary pre-installed applications to clean up your system.",
+                "scripts.apps.title": "Install Apps",
+                "scripts.apps.description": "Install useful applications via Flatpak including GIMP, Inkscape, and more.",
+                "scripts.radeon.title": "Radeon to AMDGPU",
+                "scripts.radeon.description": "Switch from Radeon to AMDGPU driver for better performance with certain AMD GPUs.",
+                "scripts.fonts.title": "Install Fonts",
+                "scripts.fonts.description": "Install and configure additional fonts for better typography.",
+                "scripts.wallpapers.title": "Install Wallpapers",
+                "scripts.wallpapers.description": "Download and set up additional wallpapers for your desktop.",
+                "scripts.copy": "Copy",
+                "features.title": "What's Included",
+                "features.packages.title": "Essential Packages",
+                "features.packages.description": "Codecs, firmware, fonts, and utilities to make your system fully functional.",
+                "features.customization.title": "GNOME Customization",
+                "features.customization.description": "Extensions and tweaks to enhance your GNOME desktop experience.",
+                "features.performance.title": "Performance",
+                "features.performance.description": "Driver optimizations and bloat removal for a faster system.",
+                "footer.text": "Debian 12 Post-Installation Scripts",
+                "footer.disclaimer": "Not affiliated with the Debian Project. Use at your own risk.",
+                "notification.copied": "Copied to clipboard!"
+            }
+        };
+
+        let currentLang = 'pt'; // Define a linguagem padrão
+
+        // Função para aplicar as traduções
+        function applyTranslations(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            // Atualiza o atributo lang do HTML
+            document.documentElement.lang = lang;
+            currentLang = lang;
+        }
+
+        // Language switcher functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Aplica as traduções iniciais com base no lang do HTML ou padrão
+            const initialLang = document.documentElement.lang || 'pt';
+            applyTranslations(initialLang);
+
+            const languageDropdownButton = document.getElementById('languageDropdownButton');
+            const languageDropdown = document.getElementById('languageDropdown');
+
+            languageDropdownButton.addEventListener('click', function() {
+                languageDropdown.classList.toggle('hidden');
+            });
+
+            // Adiciona event listener para os links de idioma
+            document.querySelectorAll('#languageDropdown a').forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault(); // Evita o comportamento padrão do link
+                    const selectedLang = this.getAttribute('data-lang');
+                    applyTranslations(selectedLang);
+                    languageDropdown.classList.add('hidden'); // Esconde o dropdown após a seleção
+                });
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!languageDropdownButton.contains(event.target) && !languageDropdown.contains(event.target)) {
+                    languageDropdown.classList.add('hidden');
+                }
+            });
+        });
+
+        // Copy to clipboard function (já existente e funcional)
+        function copyToClipboard(id) {
+            const preElement = document.getElementById(id);
+            const textToCopy = preElement.textContent || preElement.innerText; // Get text from pre tag
+
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                const notification = document.getElementById('copyNotification');
+                notification.classList.remove('hidden');
+                setTimeout(() => {
+                    notification.classList.add('hidden');
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        }
+    </script>
+</body>
+</html>

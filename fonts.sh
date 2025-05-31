@@ -73,7 +73,7 @@ unzip FontsForDesign.zip -d ~/.fonts
 
 clear
 echo "purging fonts cache "
-fc-cache -v -f
+sudo fc-cache -v -f
 clear
 echo "Done"
 sleep 2
