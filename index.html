@@ -44,7 +44,6 @@
             </div>
         </div>
     </header>
-    <!-- Download Debian, View Scripts -->
     <section class="bg-debianEmerald text-white py-12 relative overflow-hidden">
         <div class="absolute inset-0 bg-cover bg-center opacity-100"
             style="background-image: url('styles/images/banner/banner_debian12_emerald.png');"></div>
@@ -63,7 +62,6 @@
             </div>
         </div>
     </section>
-    <!-- why do you to use the debian -->
     <main class="container mx-auto px-4 py-12">
         <section id="download" class="mb-16 bg-white rounded-xl shadow-md p-6">
             <div class="flex flex-col md:flex-row items-center">
@@ -78,7 +76,6 @@
 
             </div>
         </section>
-        <!-- why do you to use the scripts -->
         <section class="mb-16 bg-white rounded-xl shadow-md p-6">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="text-debian text-xl mb-4"></div>
@@ -94,7 +91,6 @@
 
             </div>
         </section>
-        <!-- What's Included -->
         <section class="mb-16">
             <h2 class="text-3xl font-bold text-debian mb-8 text-center" data-i18n="features.title"></h2>
             <div class="grid md:grid-cols-3 gap-6">
@@ -121,7 +117,6 @@
                 </div>
             </div>
         </section>
-        <!-- Complete Post-Installation -->
         <section id="scripts" class="mb-16">
             <h2 class="text-3xl font-bold text-debian mb-8 text-center" data-i18n="scripts.title"></h2>
 
@@ -141,7 +136,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Activate Repositories -->
+            <h3 class="text-2xl font-bold text-debian mb-8 text-center" data-i18n="scripts.one"></h3>
             <div class="grid md:grid-cols-2 gap-6">
                 <div class="bg-white rounded-xl shadow-md overflow-hidden">
                     <div class="p-6">
@@ -157,7 +152,6 @@
                             class="text-sm"><code>curl -o activating_repo_apps.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/activating_repo_apps.sh && chmod +x activating_repo_apps.sh && ./activating_repo_apps.sh && rm activating_repo_apps.sh</code></pre>
                     </div>
                 </div>
-                <!-- Firefox Current -->
                 <div class="bg-white rounded-xl shadow-md overflow-hidden">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.firefox.title"></h3>
@@ -172,7 +166,6 @@
                             class="text-sm"><code>curl -o change_firefox_esr_to_firefox.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/change_firefox_esr_to_firefox.sh && chmod +x change_firefox_esr_to_firefox.sh && ./change_firefox_esr_to_firefox.sh && rm change_firefox_esr_to_firefox.sh</code></pre>
                     </div>
                 </div>
-                <!-- Codecs & Tweaks -->
                 <div class="bg-white rounded-xl shadow-md overflow-hidden">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.codecs.title"></h3>
@@ -187,22 +180,7 @@
                             class="text-sm"><code>curl -o codecs_and_tweaks_installer.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/codecs_and_tweaks_installer.sh && chmod +x codecs_and_tweaks_installer.sh && ./codecs_and_tweaks_installer.sh && rm codecs_and_tweaks_installer.sh</code></pre>
                     </div>
                 </div>
-                <!-- GNOME Extensions -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.extensions.title"></h3>
-                        <p class="text-gray-700 mb-4" data-i18n="scripts.extensions.description"></p>
-                        <button onclick="copyToClipboard('extensions')"
-                            class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition">
-                            <i class="fas fa-copy mr-2"></i> <span data-i18n="scripts.copy"></span>
-                        </button>
-                    </div>
-                    <div class="bg-gray-800 text-gray-100 p-4 m-4 rounded-lg overflow-x-auto">
-                        <pre id="extensions"
-                            class="text-sm"><code>curl -o install_extensions.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/install_extensions.sh && chmod +x install_extensions.sh && ./install_extensions.sh && rm install_extensions.sh</code></pre>
-                    </div>
-                </div>
-                <!-- Remove Unneeded Apps -->
+
                 <div class="bg-white rounded-xl shadow-md overflow-hidden">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.remove.title"></h3>
@@ -217,37 +195,10 @@
                             class="text-sm"><code>curl -o unnecessary_apps_remover.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/unnecessary_apps_remover.sh && chmod +x unnecessary_apps_remover.sh && ./unnecessary_apps_remover.sh && rm unnecessary_apps_remover.sh</code></pre>
                     </div>
                 </div>
-                <!-- Install Apps -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.apps.title"></h3>
-                        <p class="text-gray-700 mb-4" data-i18n="scripts.apps.description"></p>
-                        <button onclick="copyToClipboard('apps')"
-                            class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition">
-                            <i class="fas fa-copy mr-2"></i> <span data-i18n="scripts.copy"></span>
-                        </button>
-                    </div>
-                    <div class="bg-gray-800 text-gray-100 p-4 m-4 rounded-lg overflow-x-auto">
-                        <pre id="apps"
-                            class="text-sm"><code>curl -o install_apps.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/install_apps.sh && chmod +x install_apps.sh && ./install_apps.sh && rm install_apps.sh</code></pre>
-                    </div>
-                </div>
-                <!-- Radeon to AMDGPU -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.radeon.title"></h3>
-                        <p class="text-gray-700 mb-4" data-i18n="scripts.radeon.description"></p>
-                        <button onclick="copyToClipboard('radeon')"
-                            class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition">
-                            <i class="fas fa-copy mr-2"></i> <span data-i18n="scripts.copy"></span>
-                        </button>
-                    </div>
-                    <div class="bg-gray-800 text-gray-100 p-4 m-4 rounded-lg overflow-x-auto">
-                        <pre id="radeon"
-                            class="text-sm"><code>curl -o radeon_to_amdgpu.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/radeon_to_amdgpu.sh && chmod +x radeon_to_amdgpu.sh && ./radeon_to_amdgpu.sh && rm radeon_to_amdgpu.sh</code></pre>
-                    </div>
-                </div>
-                <!-- Install Fonts -->
+            </div>
+            <h3 class="text-2xl font-bold text-debian mb-8 mt-8 text-center" data-i18n="scripts.look"></h3>
+            
+            <div class="grid md:grid-cols-2 gap-6">
                 <div class="bg-white rounded-xl shadow-md overflow-hidden">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.fonts.title"></h3>
@@ -262,7 +213,6 @@
                             class="text-sm"><code>curl -o fonts.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/fonts.sh && chmod +x fonts.sh && ./fonts.sh && rm fonts.sh</code></pre>
                     </div>
                 </div>
-                <!-- Install Wallpapers -->
                 <div class="bg-white rounded-xl shadow-md overflow-hidden">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.wallpapers.title"></h3>
@@ -277,8 +227,55 @@
                             class="text-sm"><code>curl -o wallpapers.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/wallpapers.sh && chmod +x wallpapers.sh && ./wallpapers.sh && rm wallpapers.sh</code></pre>
                     </div>
                 </div>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.extensions.title"></h3>
+                        <p class="text-gray-700 mb-4" data-i18n="scripts.extensions.description"></p>
+                        <button onclick="copyToClipboard('extensions')"
+                            class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition">
+                            <i class="fas fa-copy mr-2"></i> <span data-i18n="scripts.copy"></span>
+                        </button>
+                    </div>
+                    <div class="bg-gray-800 text-gray-100 p-4 m-4 rounded-lg overflow-x-auto">
+                        <pre id="extensions"
+                            class="text-sm"><code>curl -o install_extensions.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/install_extensions.sh && chmod +x install_extensions.sh && ./install_extensions.sh && rm install_extensions.sh</code></pre>
+                    </div>
+                </div>
             </div>
-        </section>
+            
+                <h3 class="text-2xl font-bold text-debian mb-8 mt-8 text-center" data-i18n="scripts.plus"></h3>
+            <div class="grid md:grid-cols-2 gap-6">    
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.apps.title"></h3>
+                        <p class="text-gray-700 mb-4" data-i18n="scripts.apps.description"></p>
+                        <button onclick="copyToClipboard('apps')"
+                            class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition">
+                            <i class="fas fa-copy mr-2"></i> <span data-i18n="scripts.copy"></span>
+                        </button>
+                    </div>
+                    <div class="bg-gray-800 text-gray-100 p-4 m-4 rounded-lg overflow-x-auto">
+                        <pre id="apps"
+                            class="text-sm"><code>curl -o install_apps.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/install_apps.sh && chmod +x install_apps.sh && ./install_apps.sh && rm install_apps.sh</code></pre>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.radeon.title"></h3>
+                        <p class="text-gray-700 mb-4" data-i18n="scripts.radeon.description"></p>
+                        <button onclick="copyToClipboard('radeon')"
+                            class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition">
+                            <i class="fas fa-copy mr-2"></i> <span data-i18n="scripts.copy"></span>
+                        </button>
+                    </div>
+                    <div class="bg-gray-800 text-gray-100 p-4 m-4 rounded-lg overflow-x-auto">
+                        <pre id="radeon"
+                            class="text-sm"><code>curl -o radeon_to_amdgpu.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/radeon_to_amdgpu.sh && chmod +x radeon_to_amdgpu.sh && ./radeon_to_amdgpu.sh && rm radeon_to_amdgpu.sh</code></pre>
+                    </div>
+                </div>
+                
+                
+            </div> </section>
     </main>
 
     <footer class="bg-debianEmerald text-white py-8">
