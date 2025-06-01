@@ -10,7 +10,7 @@ const translations = {
         "more.description": "O Debian 12 Bookworm é a versão estável mais recente do sistema operacional Linux Debian, lançado em junho de 2023. É conhecido por sua estabilidade, amplo suporte a ambientes de desktop  e uma vasta coleção de mais de 64 mil pacotes de software.",
         "more.button": "Mais informações",
         "about.title": "Porque usar os Scripts:",
-        "about.description": "Apesar do Debian ser muito confiável, pode ser trabalhoso deixá-lo pronto para uso pessoal, ou para trabalho.Estes scripts ajudam a tornar a pós-instalação com GNOME e Xfce mais simples .Tudo será feito utilizando o terminal, é só copiar e  colar no terminal.",
+        "about.description": "Apesar do Debian ser muito confiável, pode ser trabalhoso deixá-lo pronto para uso pessoal ou para trabalho.Estes scripts ajudam a tornar a pós-instalação com GNOME e Xfce mais simples .Tudo será feito utilizando o terminal, é só copiar e  colar no terminal.",
         "scripts.title": "Scripts de Pós-Instalação",
         "scripts.complete.title": "Pós-Instalação base para GNOME e Xfce",
         "scripts.one":"Instalar Scripts individualmente",
