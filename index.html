@@ -6,21 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pós-Instalação do Debian 12</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./tailwind.config.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        debian: '#A80030',
-                        debianEmerald: '#05475c',
-                        debianLight: '#d63368',
-                        debianDark: '#7a0022',
-                    }
-                }
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="styles/">
+
 </head>
 
 <body class="bg-stone-200 font-sans antialiased">
@@ -28,8 +17,8 @@
         <div class="container mx-auto px-4 py-4">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="flex items-center mb-4 md:mb-0">
-                    <i class="fab fa-linux text-3xl mr-3"></i>
-                    <h1 class="text-2xl md:text-3xl font-bold" data-i18n="title">Pós-Instalação do Debian 12</h1>
+                    <img src="styles/icons/debian-brands-solid.svg" alt="Ícone Debian" class="h-8 w-8 mr-3 invert">
+                    <h1 class="text-2xl md:text-3xl font-bold " data-i18n="title">Pós-Instalação do Debian 12</h1>
                 </div>
                 <div class="flex items-center space-x-4">
                     <a href="https://github.com/phaleixo/after_install_debian_12" target="_blank"
@@ -55,105 +44,95 @@
             </div>
         </div>
     </header>
-
+    <!-- Download Debian, View Scripts -->
     <section class="bg-debianEmerald text-white py-12 relative overflow-hidden">
         <div class="absolute inset-0 bg-cover bg-center opacity-100"
-            style="background-image: url('image/banner/banner_debian12_emerald.png');"></div>
+            style="background-image: url('styles/images/banner/banner_debian12_emerald.png');"></div>
         <div class="container mx-auto px-4 text-center relative z-10">
             <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="hero.title"></h2>
             <p class="text-xl mb-8 max-w-3xl mx-auto" data-i18n="hero.subtitle"></p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="https://www.debian.org/download" target="_blank"
-                    class="bg-white text-debian px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition">
-                    <i class="fas fa-download mr-2"></i> <span data-i18n="hero.download">Baixar Debian 12</span>
+                    class="bg-debian text-white px-6 py-3 rounded-lg font-bold hover:bg-white hover:text-debian transition">
+                    <i class="fas fa-download mr-2"></i> <span data-i18n="hero.download"></span>
                 </a>
                 <a href="#scripts"
                     class="bg-transparent border-2 border-white px-6 py-3 rounded-lg font-bold hover:bg-white hover:text-debian transition">
-                    <i class="fas fa-code mr-2"></i> <span data-i18n="hero.viewScripts">Ver Scripts</span>
+                    <i class="fas fa-code mr-2"></i> <span data-i18n="hero.viewScripts"></span>
                 </a>
             </div>
         </div>
     </section>
-
+    <!-- why do you to use the debian -->
     <main class="container mx-auto px-4 py-12">
         <section id="download" class="mb-16 bg-white rounded-xl shadow-md p-6">
             <div class="flex flex-col md:flex-row items-center">
                 <div class=" mb-6 md:mb-0 md:pr-8">
-                    <h2 class="text-2xl font-bold text-debian mb-4" data-i18n="more.title">
-                    "Por que usar o Debian 12"</h2>
-                    <p class="text-gray-700 mb-4" data-i18n="more.description">"O Debian 12 Bookworm é a versão estável mais recente do sistema operacional Linux Debian, lançado em junho de 2023. É conhecido por sua estabilidade, amplo suporte a ambientes de desktop  e uma vasta coleção de mais de 64 mil pacotes de software atualizados."</p>
+                    <h2 class="text-2xl font-bold text-debian mb-4" data-i18n="more.title"></h2>
+                    <p class="text-gray-700 mb-4" data-i18n="more.description"></p>
                     <a href="https://www.debian.org/" target="_blank"
                         class="inline-block bg-debian text-white px-6 py-3 rounded-lg font-semibold hover:bg-debianDark transition">
-                        <i class="fas fa-info-circle mr-2"></i> <span data-i18n="more.button">Mais informações</span>
+                        <i class="fas fa-info-circle mr-2"></i> <span data-i18n="more.button"></span>
                     </a>
                 </div>
-                
+
             </div>
         </section>
-
+        <!-- why do you to use the scripts -->
         <section class="mb-16 bg-white rounded-xl shadow-md p-6">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="text-debian text-xl mb-4"></div>
-                    <i class="fas fa-code fa-2x text-debian mb-4"></i>
-                </div>
-                <div class=" mb-6 md:mb-0 md:pr-8">
-                    
-                    <h2 class="text-2xl font-bold text-debian mb-4" data-i18n="about.title">
-                    </h2>
-                    <p class="text-gray-700 mb-4" data-i18n="about.description"></p>
-                    
-                </div>
-                
+                <i class="fas fa-code fa-2x text-debian mb-4"></i>
+            </div>
+            <div class=" mb-6 md:mb-0 md:pr-8">
+
+                <h2 class="text-2xl font-bold text-debian mb-4" data-i18n="about.title">
+                </h2>
+                <p class="text-gray-700 mb-4" data-i18n="about.description"></p>
+
+            </div>
+
             </div>
         </section>
-
+        <!-- What's Included -->
         <section class="mb-16">
-            <h2 class="text-3xl font-bold text-debian mb-8 text-center" data-i18n="features.title">O Que Está Incluído
-            </h2>
+            <h2 class="text-3xl font-bold text-debian mb-8 text-center" data-i18n="features.title"></h2>
             <div class="grid md:grid-cols-3 gap-6">
                 <div class="bg-white rounded-xl shadow-md p-6">
                     <div class="text-debian text-4xl mb-4">
                         <i class="fas fa-box-open"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2" data-i18n="features.packages.title">Pacotes Essenciais</h3>
-                    <p class="text-gray-700" data-i18n="features.packages.description">Codecs, firmware, fontes e
-                        utilitários para tornar seu sistema totalmente funcional.</p>
+                    <h3 class="text-xl font-bold mb-2" data-i18n="features.packages.title"></h3>
+                    <p class="text-gray-700" data-i18n="features.packages.description"></p>
                 </div>
                 <div class="bg-white rounded-xl shadow-md p-6">
                     <div class="text-debian text-4xl mb-4">
                         <i class="fas fa-paint-brush"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2" data-i18n="features.customization.title">Personalização GNOME
-                    </h3>
-                    <p class="text-gray-700" data-i18n="features.customization.description">Extensões e ajustes para
-                        melhorar sua experiência com o desktop GNOME.</p>
+                    <h3 class="text-xl font-bold mb-2" data-i18n="features.customization.title"></h3>
+                    <p class="text-gray-700" data-i18n="features.customization.description"></p>
                 </div>
                 <div class="bg-white rounded-xl shadow-md p-6">
                     <div class="text-debian text-4xl mb-4">
                         <i class="fas fa-rocket"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2" data-i18n="features.performance.title">Desempenho</h3>
-                    <p class="text-gray-700" data-i18n="features.performance.description">Otimizações de drivers e
-                        remoção de bloat para um sistema mais rápido.</p>
+                    <h3 class="text-xl font-bold mb-2" data-i18n="features.performance.title"></h3>
+                    <p class="text-gray-700" data-i18n="features.performance.description"></p>
                 </div>
             </div>
         </section>
-
+        <!-- Complete Post-Installation -->
         <section id="scripts" class="mb-16">
-            <h2 class="text-3xl font-bold text-debian mb-8 text-center" data-i18n="scripts.title">Scripts de
-                Pós-Instalação</h2>
+            <h2 class="text-3xl font-bold text-debian mb-8 text-center" data-i18n="scripts.title"></h2>
 
             <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8">
                 <div class="p-6">
-                    <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.complete.title">Pós-Instalação
-                        Completa</h3>
-                    <p class="text-gray-700 mb-4" data-i18n="scripts.complete.description">Execute todas as alterações
-                        recomendadas incluindo ativação de repositórios, instalação de codecs, extensões GNOME e
-                        instalação de aplicativos.</p>
+                    <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.complete.title"></h3>
+                    <p class="text-gray-700 mb-4" data-i18n="scripts.complete.description"></p>
 
                     <button onclick="copyToClipboard('complete')"
                         class="bg-gray-200 text-gray-800 px-4 py-2 rounded mr-2 hover:bg-gray-300 transition mb-4">
-                        <i class="fas fa-copy mr-2"></i> <span data-i18n="scripts.copy">Copiar</span>
+                        <i class="fas fa-copy mr-2"></i> <span data-i18n="scripts.copy"></span>
                     </button>
 
                     <div class="bg-gray-800 text-gray-100 p-4 rounded-lg overflow-x-auto">
@@ -162,17 +141,15 @@
                     </div>
                 </div>
             </div>
-
+            <!-- Activate Repositories -->
             <div class="grid md:grid-cols-2 gap-6">
                 <div class="bg-white rounded-xl shadow-md overflow-hidden">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.repos.title">Ativar
-                            Repositórios</h3>
-                        <p class="text-gray-700 mb-4" data-i18n="scripts.repos.description">Ative os repositórios
-                            contrib e non-free e instale suporte ao Flatpak com o repositório Flathub.</p>
+                        <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.repos.title"></h3>
+                        <p class="text-gray-700 mb-4" data-i18n="scripts.repos.description"></p>
                         <button onclick="copyToClipboard('repos')"
                             class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition">
-                            <i class="fas fa-copy mr-2"></i> <span data-i18n="scripts.copy">Copiar</span>
+                            <i class="fas fa-copy mr-2"></i> <span data-i18n="scripts.copy"></span>
                         </button>
                     </div>
                     <div class="bg-gray-800 text-gray-100 p-4 m-4 rounded-lg overflow-x-auto">
@@ -180,16 +157,14 @@
                             class="text-sm"><code>curl -o activating_repo_apps.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/activating_repo_apps.sh && chmod +x activating_repo_apps.sh && ./activating_repo_apps.sh && rm activating_repo_apps.sh</code></pre>
                     </div>
                 </div>
-
+                <!-- Firefox Current -->
                 <div class="bg-white rounded-xl shadow-md overflow-hidden">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.firefox.title">Firefox Atual
-                        </h3>
-                        <p class="text-gray-700 mb-4" data-i18n="scripts.firefox.description">Mude do Firefox ESR para a
-                            versão de lançamento atual.</p>
+                        <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.firefox.title"></h3>
+                        <p class="text-gray-700 mb-4" data-i18n="scripts.firefox.description"></p>
                         <button onclick="copyToClipboard('firefox')"
                             class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition">
-                            <i class="fas fa-copy mr-2"></i> <span data-i18n="scripts.copy">Copiar</span>
+                            <i class="fas fa-copy mr-2"></i> <span data-i18n="scripts.copy"></span>
                         </button>
                     </div>
                     <div class="bg-gray-800 text-gray-100 p-4 m-4 rounded-lg overflow-x-auto">
@@ -197,16 +172,14 @@
                             class="text-sm"><code>curl -o change_firefox_esr_to_firefox.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/change_firefox_esr_to_firefox.sh && chmod +x change_firefox_esr_to_firefox.sh && ./change_firefox_esr_to_firefox.sh && rm change_firefox_esr_to_firefox.sh</code></pre>
                     </div>
                 </div>
-
+                <!-- Codecs & Tweaks -->
                 <div class="bg-white rounded-xl shadow-md overflow-hidden">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.codecs.title">Codecs & Ajustes
-                        </h3>
-                        <p class="text-gray-700 mb-4" data-i18n="scripts.codecs.description">Instale codecs multimídia,
-                            firmware, fontes e utilitários úteis.</p>
+                        <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.codecs.title"></h3>
+                        <p class="text-gray-700 mb-4" data-i18n="scripts.codecs.description"></p>
                         <button onclick="copyToClipboard('codecs')"
                             class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition">
-                            <i class="fas fa-copy mr-2"></i> <span data-i18n="scripts.copy">Copiar</span>
+                            <i class="fas fa-copy mr-2"></i> <span data-i18n="scripts.copy"></span>
                         </button>
                     </div>
                     <div class="bg-gray-800 text-gray-100 p-4 m-4 rounded-lg overflow-x-auto">
@@ -214,16 +187,14 @@
                             class="text-sm"><code>curl -o codecs_and_tweaks_installer.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/codecs_and_tweaks_installer.sh && chmod +x codecs_and_tweaks_installer.sh && ./codecs_and_tweaks_installer.sh && rm codecs_and_tweaks_installer.sh</code></pre>
                     </div>
                 </div>
-
+                <!-- GNOME Extensions -->
                 <div class="bg-white rounded-xl shadow-md overflow-hidden">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.extensions.title">Extensões
-                            GNOME</h3>
-                        <p class="text-gray-700 mb-4" data-i18n="scripts.extensions.description">Instale extensões úteis
-                            do GNOME como Dash-to-Dock, Tiling Assistant e mais.</p>
+                        <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.extensions.title"></h3>
+                        <p class="text-gray-700 mb-4" data-i18n="scripts.extensions.description"></p>
                         <button onclick="copyToClipboard('extensions')"
                             class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition">
-                            <i class="fas fa-copy mr-2"></i> <span data-i18n="scripts.copy">Copiar</span>
+                            <i class="fas fa-copy mr-2"></i> <span data-i18n="scripts.copy"></span>
                         </button>
                     </div>
                     <div class="bg-gray-800 text-gray-100 p-4 m-4 rounded-lg overflow-x-auto">
@@ -231,16 +202,14 @@
                             class="text-sm"><code>curl -o install_extensions.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/install_extensions.sh && chmod +x install_extensions.sh && ./install_extensions.sh && rm install_extensions.sh</code></pre>
                     </div>
                 </div>
-
+                <!-- Remove Unneeded Apps -->
                 <div class="bg-white rounded-xl shadow-md overflow-hidden">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.remove.title">Remover Apps
-                            Desnecessários</h3>
-                        <p class="text-gray-700 mb-4" data-i18n="scripts.remove.description">Remova aplicativos
-                            pré-instalados desnecessários para limpar seu sistema.</p>
+                        <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.remove.title"></h3>
+                        <p class="text-gray-700 mb-4" data-i18n="scripts.remove.description"></p>
                         <button onclick="copyToClipboard('remove')"
                             class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition">
-                            <i class="fas fa-copy mr-2"></i> <span data-i18n="scripts.copy">Copiar</span>
+                            <i class="fas fa-copy mr-2"></i> <span data-i18n="scripts.copy"></span>
                         </button>
                     </div>
                     <div class="bg-gray-800 text-gray-100 p-4 m-4 rounded-lg overflow-x-auto">
@@ -248,16 +217,14 @@
                             class="text-sm"><code>curl -o unnecessary_apps_remover.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/unnecessary_apps_remover.sh && chmod +x unnecessary_apps_remover.sh && ./unnecessary_apps_remover.sh && rm unnecessary_apps_remover.sh</code></pre>
                     </div>
                 </div>
-
+                <!-- Install Apps -->
                 <div class="bg-white rounded-xl shadow-md overflow-hidden">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.apps.title">Instalar
-                            Aplicativos</h3>
-                        <p class="text-gray-700 mb-4" data-i18n="scripts.apps.description">Instale aplicativos úteis via
-                            Flatpak incluindo GIMP, Inkscape e mais.</p>
+                        <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.apps.title"></h3>
+                        <p class="text-gray-700 mb-4" data-i18n="scripts.apps.description"></p>
                         <button onclick="copyToClipboard('apps')"
                             class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition">
-                            <i class="fas fa-copy mr-2"></i> <span data-i18n="scripts.copy">Copiar</span>
+                            <i class="fas fa-copy mr-2"></i> <span data-i18n="scripts.copy"></span>
                         </button>
                     </div>
                     <div class="bg-gray-800 text-gray-100 p-4 m-4 rounded-lg overflow-x-auto">
@@ -265,16 +232,14 @@
                             class="text-sm"><code>curl -o install_apps.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/install_apps.sh && chmod +x install_apps.sh && ./install_apps.sh && rm install_apps.sh</code></pre>
                     </div>
                 </div>
-
+                <!-- Radeon to AMDGPU -->
                 <div class="bg-white rounded-xl shadow-md overflow-hidden">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.radeon.title">Radeon para
-                            AMDGPU</h3>
-                        <p class="text-gray-700 mb-4" data-i18n="scripts.radeon.description">Mude do driver Radeon para
-                            AMDGPU para melhor desempenho com certas GPUs AMD.</p>
+                        <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.radeon.title"></h3>
+                        <p class="text-gray-700 mb-4" data-i18n="scripts.radeon.description"></p>
                         <button onclick="copyToClipboard('radeon')"
                             class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition">
-                            <i class="fas fa-copy mr-2"></i> <span data-i18n="scripts.copy">Copiar</span>
+                            <i class="fas fa-copy mr-2"></i> <span data-i18n="scripts.copy"></span>
                         </button>
                     </div>
                     <div class="bg-gray-800 text-gray-100 p-4 m-4 rounded-lg overflow-x-auto">
@@ -282,16 +247,14 @@
                             class="text-sm"><code>curl -o radeon_to_amdgpu.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/radeon_to_amdgpu.sh && chmod +x radeon_to_amdgpu.sh && ./radeon_to_amdgpu.sh && rm radeon_to_amdgpu.sh</code></pre>
                     </div>
                 </div>
-
+                <!-- Install Fonts -->
                 <div class="bg-white rounded-xl shadow-md overflow-hidden">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.fonts.title">Instalar Fontes
-                        </h3>
-                        <p class="text-gray-700 mb-4" data-i18n="scripts.fonts.description">Instale e configure fontes
-                            adicionais para melhor tipografia.</p>
+                        <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.fonts.title"></h3>
+                        <p class="text-gray-700 mb-4" data-i18n="scripts.fonts.description"></p>
                         <button onclick="copyToClipboard('fonts')"
                             class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition">
-                            <i class="fas fa-copy mr-2"></i> <span data-i18n="scripts.copy">Copiar</span>
+                            <i class="fas fa-copy mr-2"></i> <span data-i18n="scripts.copy"></span>
                         </button>
                     </div>
                     <div class="bg-gray-800 text-gray-100 p-4 m-4 rounded-lg overflow-x-auto">
@@ -299,16 +262,14 @@
                             class="text-sm"><code>curl -o fonts.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/fonts.sh && chmod +x fonts.sh && ./fonts.sh && rm fonts.sh</code></pre>
                     </div>
                 </div>
-
+                <!-- Install Wallpapers -->
                 <div class="bg-white rounded-xl shadow-md overflow-hidden">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.wallpapers.title">Instalar
-                            Papéis de Parede</h3>
-                        <p class="text-gray-700 mb-4" data-i18n="scripts.wallpapers.description">Baixe e configure
-                            papéis de parede adicionais para sua área de trabalho.</p>
+                        <h3 class="text-xl font-bold text-debian mb-2" data-i18n="scripts.wallpapers.title"></h3>
+                        <p class="text-gray-700 mb-4" data-i18n="scripts.wallpapers.description"></p>
                         <button onclick="copyToClipboard('wallpapers')"
                             class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition">
-                            <i class="fas fa-copy mr-2"></i> <span data-i18n="scripts.copy">Copiar</span>
+                            <i class="fas fa-copy mr-2"></i> <span data-i18n="scripts.copy"></span>
                         </button>
                     </div>
                     <div class="bg-gray-800 text-gray-100 p-4 m-4 rounded-lg overflow-x-auto">
@@ -330,22 +291,23 @@
             </div>
             <p class="mb-2" data-i18n="footer.text">Pós-Instalação do Debian 12</p>
             <p class="text-sm text-gray-300 mb-2 flex items-center justify-center space-x-1" data-i18n="footer.text2">
-                Developed by 
+                Developed by
                 <a href="https://github.com/phaleixo" target="_blank"
-                    class="text-white hover:text-gray-300 transition-colors">
-                    <i class="fab fa-github text-base mr-1"> </i> phaleixo
-                    <p>phaleixo@outlook.com.br</p>
+                    class="text-white hover:text-gray-300 transition-colors flex items-center space-x-1">
+                    <i class="fab fa-github text-base"></i>
+                    <span>phaleixo</span>
                 </a>
             </p>
-            <p class="text-sm text-gray-300 mt-4" data-i18n="footer.disclaimer">Não afiliado ao Projeto Debian. Use por sua
-                conta e risco.</p>
+            <p class="text-sm text-gray-300 flex items-center justify-center">
+                phaleixo@outlook.com.br
+            </p>
+            <p class="text-sm text-gray-300 mt-4" data-i18n="footer.disclaimer"></p>
         </div>
     </footer>
 
     <div id="copyNotification"
         class="fixed bottom-4 right-4 bg-debian text-white px-4 py-2 rounded-lg shadow-lg hidden">
-        <i class="fas fa-check mr-2"></i> <span data-i18n="notification.copied">Copiado para a área de
-            transferência!</span>
+        <i class="fas fa-check mr-2"></i> <span data-i18n="notification.copied"></span>
     </div>
 
     <script src="scripts/index.js"></script>
