@@ -55,9 +55,9 @@ if [[ $? -ne 0 ]]; then
 fi
 
 
-wget -O my_wallpapers.xml "https://github.com/phaleixo/after_install_debian_12/blob/main/my_wallpapers.xml"
+wget -O my_wallpapers.xml "https://github.com/phaleixo/after_install_debian_12/blob/main/src/my_wallpapers.xml"
 
-wget -O wallpapers.zip "https://github.com/phaleixo/after_install_debian_12/blob/main/wallpapers.zip"
+wget -O wallpapers.zip "https://github.com/phaleixo/after_install_debian_12/blob/main/src/wallpapers.zip"
 
 
 if [[ $? -ne 0 ]]; then

@@ -59,7 +59,7 @@ wget -O fonts.zip "https://github.com/mozilla/Fira/archive/refs/tags/4.202.zip"
 
 wget -O firacode.zip "https://github.com/tonsky/FiraCode/releases/download/1.204/FiraCode_1.204.zip"
 
-wget -O FontsForDesign.zip "https://github.com/phaleixo/after_install_debian_12/blob/main/Fonts%20for%20design.zip"
+wget -O FontsForDesign.zip "https://github.com/phaleixo/after_install_debian_12/blob/main/src/Fonts%20for%20design.zip"
 
 
 if [[ $? -ne 0 ]]; then
