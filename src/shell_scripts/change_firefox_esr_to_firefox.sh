@@ -66,5 +66,6 @@ Pin-Priority: 1000
 ### Update your package list and install the Firefox .deb package
 sudo apt-get update && sudo apt-get install firefox -y && sudo apt-get install firefox-l10n-pt-br -y
 
-echo "Updated Firefox."
+echo -e "Updated Firefox."
+
 exit 0

@@ -72,3 +72,7 @@ else
     inform "Unable to detect the AMDGPU or Radeon video driver on the system." "error"
 fi
 
+echo -e "Change Drive Completed, please restart the PC"
+
+exit 0
+

@@ -66,7 +66,7 @@ done
 
 sudo apt autoremove && sudo apt autoclean
 
-echo -e "removed unnecessary apps"
+echo -e "Removed unnecessary apps"
 
 exit 0
 
