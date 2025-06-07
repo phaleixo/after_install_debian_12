@@ -40,7 +40,7 @@ const translations = {
         "features.packages.title": "Pacotes Essenciais",
         "features.packages.description": "Codecs, firmware, fontes e utilitários para tornar seu sistema totalmente funcional.",
         "features.customization.title": "Personalização",
-        "features.customization.description": "Extensões e ajustes para melhorar sua experiência com o desktop GNOME ou Xfce.",
+        "features.customization.description": "Extensões e ajustes para melhorar sua experiência com o desktop GNOME ou XFCE.",
         "features.performance.title": "Desempenho",
         "features.performance.description": "Otimizações de drivers e remoção de bloat para um sistema mais rápido.",
         "footer.text": "Scripts de Pós-Instalação do Debian 12",
