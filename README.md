@@ -1,130 +1,36 @@
-Post installation script developed for Debian 12 live Gnome base, based on my use of programs, configurations and customizations.
-Link to download the ISO:
-https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-12.6.0-amd64-gnome.iso
+# After Install – Debian Stable (Gnome & XFCE)
 
-Make all changes (recommend)
+**After Install Debian** is a post-installation setup designed to improve and simplify the experience after installing **Debian Stable**, whether you're using the **Gnome** or **XFCE** desktop environment.
 
-```
-curl -o pos_install_complete.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/pos_install_complete.sh && chmod +x pos_install_complete.sh && ./pos_install_complete.sh && rm pos_install_complete.sh
-```
+This project is based on personal preferences, commonly used applications, system configurations, and desktop customizations — all wrapped into automated scripts for a faster and more complete setup.
 
-Activating the contrib and non-free repository and install flatpak support and flathub repository:
-```
-curl -o activating_repo_apps.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/activating_repo_apps.sh && chmod +x activating_repo_apps.sh && ./activating_repo_apps.sh && rm activating_repo_apps.sh
-```
-Change firefox ESR to Current:
+## 🎯 Project Goals
 
-```
-curl -o change_firefox_esr_to_firefox.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/change_firefox_esr_to_firefox.sh && chmod +x change_firefox_esr_to_firefox.sh && ./change_firefox_esr_to_firefox.sh && rm change_firefox_esr_to_firefox.sh
-```
-Codecs and tweaks installer:
-`
-   exfat-fuse 
-	ffmpeg 
-	ffmpegthumbnailer 
-	firmware-amd-graphics 
-	firmware-linux-nonfree 
-	font-manager 
-	fonts-croscore 
-	fonts-noto 
-	fonts-noto-extra 
-	fonts-ubuntu 
-	gamemode 
-	gir1.2-gtop-2.0 
-	gnome-browser-connector 
-	gnome-firmware 
-	gnome-tweaks 
-	gstreamer1.0-plugins-ugly 
-	gstreamer1.0-vaapi 
-	gufw 
-	libavcodec-extra 
-	ldap-utils 
-	libasound2-plugins 
-	micro 
-	vdpauinfo
-	python3-pip
-	python3
-	gnome-boxes
-	p7zip-rar
-	ntp
-	network-manager-config-connectivity-debian
-	ttf-mscorefonts-installer
-	default-jre
-	default-jdk -y
-`
-```
-curl -o codecs_and_tweaks_installer.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/codecs_and_tweaks_installer.sh && chmod +x codecs_and_tweaks_installer.sh && ./codecs_and_tweaks_installer.sh && rm codecs_and_tweaks_installer.sh
-```
+- Automate essential software installations  
+- Enable additional repositories (contrib/non-free, Flatpak, Flathub)  
+- Install multimedia codecs and fonts  
+- Apply useful system tweaks and remove unnecessary packages  
+- Add productivity and usability-focused GNOME/XFCE extensions  
+- Provide visual customization (fonts & wallpapers)  
+- Offer AMD GPU driver adjustments if needed  
 
+Whether you're a beginner or experienced Debian user, this setup helps save time and delivers a more polished out-of-the-box experience.
 
-Install Gnome-extensions:''places-status-indicator
-appindicator-support
-auto-activities
-quick-settings-tweaker
-dash-to-dock
-tophat
-tiling-assistant
-''
-```
-curl -o install_extensions.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/install_extensions.sh && chmod +x install_extensions.sh && ./install_extensions.sh && rm install_extensions.sh
-```
+## 🌐 Get Started
 
-Unnecessary Apps Remover:
-`
-    fcitx*
-    mozc*
-    xiterm+thai*
-    mlterm*
-    xterm*
-    hdate*
-    kasumi*
-    gnome-games*
-    im*
-    goldendict*
-    hdate*
-    uim*
-    thunderbird*
-    gnome-music
-    gnome-software
-```
-curl -o unnecessary_apps_remover.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/unnecessary_apps_remover.sh && chmod +x unnecessary_apps_remover.sh && ./unnecessary_apps_remover.sh && rm unnecessary_apps_remover.sh
-```
+All instructions, scripts, and detailed information are available on the official site:
 
-Unnecessary Apps Remover:
-`
-    flatpak:
-	GIMP
-	GIMP.Plugin.Resynthesizer
-	Inkscape 
-	Builder
-	Cambalache 
-	Workbench
-	DolphinEmu
-	Postman
-	Flatseal
-	bottles
-	bitwarden.desktop
-	Fragments
-	sqlitebrowser
-)
-```
-curl -o install_apps.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/install_apps.sh && chmod +x install_apps.sh && ./install_apps.sh && rm install_apps.sh
-```
+👉 **[https://phaleixo.github.io/after_install_debian_12/index.html](https://phaleixo.github.io/after_install_debian_12/index.html)**
 
+There you'll find:
 
-Switch Radeon to Amdgpu on Debian-based distros:
+- Step-by-step usage guide  
+- Script explanations  
+- Optional enhancements  
+- Visual and system customizations  
 
-Enable amdgpu drive and disable Radeon drive on Linux, tested on Debian 12, but should work on any Debian based distro. Below is a list of all GPU models from the ‘Sea Islands’ and ‘Southern Islands’ families. If your GPU is on this list, then the procedure will probably be necessary.
+---
 
-Tahiti, Bonaire, Hawaii, Pitcairn, Cape Verde, Oland.
-```
-curl -o radeon_to_amdgpu.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/radeon_to_amdgpu.sh && chmod +x radeon_to_amdgpu.sh && ./radeon_to_amdgpu.sh && rm radeon_to_amdgpu.sh
-```
-install and set fonts:
-```
-curl -o fonts.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/fonts.sh && chmod +x fonts.sh && ./fonts.sh && rm fonts.sh
-```
-install and set Wallpapers:
-```
-curl -o wallpapers.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/wallpapers.sh && chmod +x wallpapers.sh && ./wallpapers.sh && rm wallpapers.sh
-```
+Feel free to explore, use, and contribute to improve the project!
+
+Enjoy your Debian experience 🚀🐧
