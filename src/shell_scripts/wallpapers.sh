@@ -88,7 +88,7 @@ case $DE in
         
         # Set wallpaper for all monitors
         for monitor in $(xfconf-query -c xfce4-desktop -l | grep last-image); do
-            xfconf-query -c xfce4-desktop -p $monitor -s /usr/share/xfce4/backdrops/wallpapers/21.jpg
+            xfconf-query -c xfce4-desktop -p $monitor -s /usr/share/images/desktop-base/wallpapers/21.jpg
         done
         ;;
     *)
