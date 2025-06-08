@@ -64,7 +64,7 @@ echo "Setting default fonts..."
 if [[ $XDG_CURRENT_DESKTOP == *"GNOME"* ]]; then
 	gsettings set org.gnome.desktop.interface document-font-name 'Inter Regular 10'
 	gsettings set org.gnome.desktop.interface font-name 'Inter Regular 10'
-	gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrainsMono 10'
+	gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrains Mono Regular 10'
 	gsettings set org.gnome.nautilus.desktop font 'Inter Regular 10'
 	gsettings set org.gnome.desktop.wm.preferences titlebar-font "Inter SemiBold 11"
 	echo "Fonts set for GNOME"
