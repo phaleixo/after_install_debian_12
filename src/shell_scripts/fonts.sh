@@ -70,7 +70,7 @@ if [[ $XDG_CURRENT_DESKTOP == *"GNOME"* ]]; then
 	echo "Fonts set for GNOME"
 elif [[ $XDG_CURRENT_DESKTOP == *"XFCE"* ]]; then
 	xfconf-query -c xsettings -p /Gtk/FontName -s "Inter 10"
-	xfconf-query -c xsettings -p /Gtk/MonospaceFontName -s "JetBrainsMono 10"
+	xfconf-query -c xsettings -p /Gtk/MonospaceFontName -s "JetBrains Mono Regular 10"
 	echo "Fonts set for XFCE"
 else
 	echo "Unknown desktop environment. Set fonts manually if needed."
