@@ -84,7 +84,7 @@ case $DE in
         ;;
     "xfce")
         echo "Installing for XFCE..."
-        sudo mv ~/wallpapers /usr/share/xfce4/backdrops/
+        sudo mv ~/wallpapers /usr/share/images/desktop-base/
         
         # Set wallpaper for all monitors
         for monitor in $(xfconf-query -c xfce4-desktop -l | grep last-image); do
