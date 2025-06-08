@@ -64,13 +64,13 @@ echo "Setting default fonts..."
 if [[ $XDG_CURRENT_DESKTOP == *"GNOME"* ]]; then
 	gsettings set org.gnome.desktop.interface document-font-name 'Inter Regular 10'
 	gsettings set org.gnome.desktop.interface font-name 'Inter Regular 10'
-	gsettings set org.gnome.desktop.interface monospace-font-name 'Inter Mono 10'
+	gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrainsMono 10'
 	gsettings set org.gnome.nautilus.desktop font 'Inter Regular 10'
 	gsettings set org.gnome.desktop.wm.preferences titlebar-font "Inter SemiBold 11"
 	echo "Fonts set for GNOME"
 elif [[ $XDG_CURRENT_DESKTOP == *"XFCE"* ]]; then
 	xfconf-query -c xsettings -p /Gtk/FontName -s "Inter 10"
-	xfconf-query -c xsettings -p /Gtk/MonospaceFontName -s "Noto Sans Mono Regular 10"
+	xfconf-query -c xsettings -p /Gtk/MonospaceFontName -s "JetBrainsMono 10"
 	echo "Fonts set for XFCE"
 else
 	echo "Unknown desktop environment. Set fonts manually if needed."
